@@ -8,8 +8,7 @@ body {
   font-family: "Cabin", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.02em;
-  position: relative;
+  overflow: hidden;
 }
 
 ul,
@@ -23,4 +22,24 @@ a {
 
 p {
   font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.section-title {
+  margin: 16px 0px 16px 0px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.element-title {
+  margin: 16px 0px 8px 0px;
+
+  color: #333333;
 }
