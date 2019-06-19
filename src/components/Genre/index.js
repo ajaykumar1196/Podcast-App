@@ -5,6 +5,7 @@ import { GENRES } from "../../constants/genres";
 import { connect } from "react-redux";
 import { fetchPodcasts } from "../../actions/index";
 import Card from "../Card";
+import "./genre.css";
 import Loader from "../Loader";
 
 class Genre extends React.Component {
@@ -20,7 +21,7 @@ class Genre extends React.Component {
 
   renderPodcastList = ({ podcastList }) => {
     return (
-      <div>
+      <div className="cards">
         {podcastList.map(podcast => {
           return <Card podcast={podcast} key={podcast.collectionId} />;
         })}
@@ -66,7 +67,6 @@ class Genre extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     podcastList: state.podcastList.items,
     isLoading: state.podcastList.isLoading
