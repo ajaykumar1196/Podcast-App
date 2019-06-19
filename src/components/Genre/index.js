@@ -5,6 +5,7 @@ import { GENRES } from "../../constants/genres";
 import { connect } from "react-redux";
 import { fetchPodcasts } from "../../actions/index";
 import Card from "../Card";
+import Loader from "../Loader";
 
 class Genre extends React.Component {
   componentDidMount() {
@@ -43,21 +44,23 @@ class Genre extends React.Component {
 
   render() {
     return (
-      <section className="genres">
+      <div>
         {this.props.isLoading ? (
-          <div> Loading...</div>
+          <Loader text={"Loading..."} />
         ) : (
-          <div className="wrapper">
-            <div className="section-title">
-              <h1>{GENRES[this.props.match.params.genreId].name}</h1>
-            </div>
+          <section className="genres">
+            <div className="wrapper">
+              <div className="section-title">
+                <h1>{GENRES[this.props.match.params.genreId].name}</h1>
+              </div>
 
-            {this.renderSubGenreList(this.props.match.params.genreId)}
-            <h3 className="element-title">Top Podcasts</h3>
-            {this.renderPodcastList(this.props)}
-          </div>
+              {this.renderSubGenreList(this.props.match.params.genreId)}
+              <h3 className="element-title">Top Podcasts</h3>
+              {this.renderPodcastList(this.props)}
+            </div>
+          </section>
         )}
-      </section>
+      </div>
     );
   }
 }
