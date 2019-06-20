@@ -1,10 +1,15 @@
 .loader {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.125);
   color: #fff;
   text-align: center;
-  width: 100%;
-  height: calc(100% - 80px);
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-75px, -155px);
+  border-radius: 8px;
+  width: 150px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +37,6 @@
   }
 }
 
-.loader p {
-  font: 24px "Roboto", sans-serif;
-  margin-bottom: 40px;
+.loading-text {
+  color: #333333;
 }

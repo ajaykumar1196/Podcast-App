@@ -5,7 +5,7 @@ const Loader = props => {
     <div className="loader">
       <div>
         <div className="loading" />
-        <div>{props.text}</div>
+        <div className="loading-text">{props.text}</div>
       </div>
     </div>
   );
