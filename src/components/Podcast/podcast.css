@@ -1,3 +1,7 @@
+p {
+  font-size: 14px;
+}
+
 .podcast-info {
   margin-top: 40px;
   display: flex;
@@ -5,8 +9,7 @@
 }
 .podcast-info__artwork {
   display: inline-block;
-  /* width: 38.38308%;
-  height: auto; */
+
   margin-right: 16px;
 }
 
@@ -88,9 +91,28 @@
   color: #8a8a8a;
   display: block;
 }
+
+.episode-title-with-btn {
+  display: flex;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.episode-info {
+  margin-bottom: 24px;
+}
+.episode-title {
+  font-size: 18px;
+  margin-left: 8px;
+}
+.episode-description {
+  font-size: 14px;
+  line-height: 1.4;
+}
 .episode-description a {
   color: #007bff;
 }
+
 @media all and (min-width: 481px) and (max-width: 768px) {
 }
 @media (max-width: 480px) {

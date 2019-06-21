@@ -14,17 +14,19 @@ class Podcast extends React.Component {
   renderPodcastEpisodes = ({ items }) => {
     const Episodes = items.map(episode => {
       return (
-        <div key={episode.guid}>
-          <h2 className="episode-title">{episode.title}</h2>
+        <div className="episode-info" key={episode.guid}>
+          <div className="episode-title-with-btn">
+            <button
+              className="btn-play"
+              onClick={() => this.props.onSelectPodcast(episode.enclosure.link)}
+            >
+              Play
+            </button>
+            <h2 className="episode-title">{episode.title}</h2>
+          </div>
           <div className="episode-description">
             {ReactHtmlParser(episode.description)}
           </div>
-
-          <button
-            onClick={() => this.props.onSelectPodcast(episode.enclosure.link)}
-          >
-            Play
-          </button>
         </div>
       );
     });
@@ -98,6 +100,8 @@ class Podcast extends React.Component {
                 this.props.podcastMeta.podcastItunesMeta,
                 this.props.podcastMeta.meta.feed.description
               )}
+
+              <div className="section-title">Episodes</div>
               {this.renderPodcastEpisodes(this.props.podcastMeta.meta)}
             </div>
           </div>

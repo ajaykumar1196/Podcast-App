@@ -42,3 +42,13 @@ p {
 
   color: #333333;
 }
+
+.btn-play {
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background-color: #007bff;
+  color: #ffffff;
+  display: inline-block;
+}
