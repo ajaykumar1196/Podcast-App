@@ -41,3 +41,17 @@ export const fetchPodcastMeta = podcastId => async dispatch => {
         });
     });
 };
+
+export const setActiveEpisodeUrl = url => {
+  return {
+    type: "SET_ACTIVE_EPISODE",
+    payload: url
+  };
+};
+
+export const setIsPlaying = isPlaying => {
+  return {
+    type: "SET_IS_PLAYING",
+    payload: isPlaying
+  };
+};

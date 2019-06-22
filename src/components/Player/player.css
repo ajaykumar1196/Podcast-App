@@ -1,0 +1,13 @@
+.player {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.toggle-play-button {
+  background: #007bff !important;
+}
+
+.pause-icon {
+  box-shadow: #007bff 7px 0px 0px 0px inset !important;
+}

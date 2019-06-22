@@ -1,6 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchPodcastMeta } from "../../actions/index";
+import {
+  fetchPodcastMeta,
+  setActiveEpisodeUrl,
+  setIsPlaying
+} from "../../actions/index";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import Loader from "../Loader";
@@ -18,10 +22,17 @@ class Podcast extends React.Component {
           <div className="episode-title-with-btn">
             <button
               className="btn-play"
-              onClick={() => this.props.onSelectPodcast(episode.enclosure.link)}
+              onClick={() => {
+                this.props.setActiveEpisodeUrl(episode.enclosure.link);
+                this.props.setIsPlaying(true);
+              }}
             >
-              Play
+              {this.props.activeEpisodeUrl === episode.enclosure.link &&
+              this.props.isPlaying
+                ? "Playing"
+                : "Play"}
             </button>
+
             <h2 className="episode-title">{episode.title}</h2>
           </div>
           <div className="episode-description">
@@ -113,12 +124,16 @@ class Podcast extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
+    activeEpisodeUrl: state.player.activeEpisodeUrl,
+    isPlaying: state.player.isPlaying,
     podcastMeta: state.podcastMeta
   };
 };
 export default connect(
   mapStateToProps,
   {
-    fetchPodcastMeta
+    fetchPodcastMeta,
+    setActiveEpisodeUrl,
+    setIsPlaying
   }
 )(Podcast);

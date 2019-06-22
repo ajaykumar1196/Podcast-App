@@ -7,6 +7,7 @@ import Genres from "../Card";
 import Podcast from "../Podcast";
 import Error404 from "../Error404";
 import Header from "../Header";
+import Player from "../Player";
 
 class App extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class App extends React.Component {
             <Route exact path="/podcast/:podcastId" component={Podcast} />
             <Route component={Error404} />
           </Switch>
-          {/* <Player /> */}
+          <Player />
         </div>
       </BrowserRouter>
     );

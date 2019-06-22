@@ -48,7 +48,9 @@ p {
   outline: none;
   border: none;
   border-radius: 50px;
-  background-color: #007bff;
-  color: #ffffff;
+  background-color: #eff2f4;
+  color: #333333;
+  border-color: #eeeeee;
   display: inline-block;
+  cursor: pointer;
 }

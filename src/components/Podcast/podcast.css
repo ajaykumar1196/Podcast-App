@@ -108,6 +108,7 @@ p {
 .episode-description {
   font-size: 14px;
   line-height: 1.4;
+  color: #333333;
 }
 .episode-description a {
   color: #007bff;
